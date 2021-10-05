@@ -28,15 +28,16 @@ const SearchScreen = () => {
       />
       <ScrollView>
         {
-          Object.keys(restaurantsMap).map((restaurant, index) => {
-            return (
-              <ResultsList
-                key={restaurant.id}
-                restaurants={restaurantsMap[restaurant]}
-                headerText={headers[index]}
-              />
-            )
-          })
+          Object.keys(restaurantsMap)
+            .map((restaurantPriceKey, index) => {
+              return (
+                <ResultsList
+                  key={restaurantPriceKey}
+                  restaurants={restaurantsMap[restaurantPriceKey]}
+                  headerText={headers[index]}
+                />
+              )
+            })
         }
       </ScrollView>
     </>
